@@ -3,22 +3,30 @@ package com.company;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.*;
 
 public class SwapBoxTask {
 
-    public void start(Shell shell){
+    private Group group;
 
-        Group group = new Group(shell, SWT.SHADOW_IN);
+    public void start(Shell shell){
+        group = new Group(shell, SWT.SHADOW_IN);
         group.setText("SwapBox Task:");
-        RowLayout rowLayout = new RowLayout(SWT.HORIZONTAL);
         group.setLayoutData(new RowData(260,75));
+        RowLayout rowLayout = new RowLayout(SWT.HORIZONTAL);
         rowLayout.wrap = true;
         rowLayout.justify = true;
         rowLayout.pack = true;
         group.setLayout(rowLayout);
+
+        MessageBox warningText = new MessageBox(shell);
+        warningText.setMessage("Input text!");
+
+        MessageBox warningBut = new MessageBox(shell);
+        warningBut.setMessage("The button has no name!");
 
         Button button1 = new Button(group, SWT.PUSH), button2 = new Button(group, SWT.PUSH);
         Text text = new Text(group, SWT.NO);
@@ -34,8 +42,6 @@ public class SwapBoxTask {
                     text.setText("");
                 }
                 else{
-                    MessageBox warningText = new MessageBox(shell);
-                    warningText.setMessage("Input text!");
                     warningText.open();
                 }
             }
@@ -52,8 +58,7 @@ public class SwapBoxTask {
                     button1.setText(button2.getText());
                     button2.setText(swap_text);
                 } else {
-                    MessageBox warningBut = new MessageBox(shell);
-                    warningBut.setMessage("The button has no name!");
+
                     warningBut.open();
                 }
             }
@@ -61,5 +66,9 @@ public class SwapBoxTask {
             public void widgetDefaultSelected(SelectionEvent selectionEvent) {
             }
         });
+    }
+
+    public void changeColor(Color color){
+        group.setBackground(color);
     }
 }

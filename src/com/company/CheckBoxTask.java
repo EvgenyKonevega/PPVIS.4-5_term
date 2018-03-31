@@ -3,14 +3,15 @@ package com.company;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.*;
 
 public class CheckBoxTask {
-
+    private Group group;
     public void start(Shell shell){
-        Group group = new Group(shell, SWT.SHADOW_IN);
+        group = new Group(shell, SWT.SHADOW_IN);
         group.setText("CheckBox Task:");
         group.setLayoutData(new RowData(130,75));
         RowLayout rowLayout = new RowLayout(SWT.HORIZONTAL);
@@ -58,8 +59,11 @@ public class CheckBoxTask {
             }
             @Override
             public void widgetDefaultSelected(SelectionEvent selectionEvent) {
-
             }
         });
+    }
+
+    public void changeColor(Color color){
+        group.setBackground(color);
     }
 }
