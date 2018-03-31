@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="873de768-f172-45f9-ad57-c8e6f94a2975" name="Default" comment="" />
+    <list default="true" id="873de768-f172-45f9-ad57-c8e6f94a2975" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/SwapColors.java" afterPath="$PROJECT_DIR$/src/com/company/SwapColors.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="SwapColors.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/SwapColors.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="84" column="38" lean-forward="true" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+            <state relative-caret-position="123">
+              <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -281,12 +283,12 @@
       <workItem from="1522320557958" duration="4711000" />
       <workItem from="1522391566696" duration="5827000" />
       <workItem from="1522435732751" duration="678000" />
-      <workItem from="1522444025564" duration="6861000" />
+      <workItem from="1522444025564" duration="6952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80577000" />
+    <option name="totallyTimeSpent" value="80668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -782,8 +784,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/SwapColors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="84" column="38" lean-forward="true" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+        <state relative-caret-position="123">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

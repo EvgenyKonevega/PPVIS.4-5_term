@@ -75,15 +75,7 @@ public class SwapColors {
                                         rt.changeColor(colors.get(2));
                                         sbt.changeColor(colors.get(3));
                                         combbt.changeColor(colors.get(4));
-
-                                       /* tt.changeColor(colors.get((num) % 5));
-                                        checkbt.changeColor(colors.get((num + 1) % 5));
-                                        rt.changeColor(colors.get((num + 2) % 5));
-                                        sbt.changeColor(colors.get((num + 3) % 5));
-                                        combbt.changeColor(colors.get((num + 4) % 5));
-                                        num = (num + 1) % 5;
-                                    */
-                                    }
+                                     }
                                 });
                             }
                         }
