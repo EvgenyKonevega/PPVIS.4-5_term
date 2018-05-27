@@ -61,7 +61,7 @@ public class SwapColors {
                         public void run() {
                             while ((!isStopPressed) & (isStartPressed)) {
                                 try {
-                                    Thread.sleep(1000);
+                                    Thread.sleep(500);
                                 } catch (InterruptedException ex) {
                                 }
                                 Display.getDefault().asyncExec(new Runnable() {
