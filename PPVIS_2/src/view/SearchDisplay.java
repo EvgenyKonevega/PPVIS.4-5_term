@@ -1,4 +1,4 @@
-package Veiw;
+package view;
 
 public class SearchDisplay {
 }

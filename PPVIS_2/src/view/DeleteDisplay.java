@@ -1,4 +1,5 @@
-package Veiw;
+package view;
 
 public class DeleteDisplay {
+
 }

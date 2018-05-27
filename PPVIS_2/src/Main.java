@@ -1,9 +1,9 @@
-import Veiw.ParentDisplay;
+import view.ParentDisplay;
 
 public class Main {
 
     public static void main(String[] args){
-        ParentDisplay parentDisplay = new ParentDisplay();
+       ParentDisplay parentDisplay = new ParentDisplay();
     }
 }
 
