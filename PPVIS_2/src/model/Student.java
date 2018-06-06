@@ -6,8 +6,8 @@ public class Student {
     private String name;
     private String secondname;
 
-    private Phone phone;
-    private Adress adress;
+    public Phone phone;
+    public Address address;
 
     public String getSurname() {
         return surname;
@@ -32,5 +32,4 @@ public class Student {
     public void setSecondname(String secondname) {
         this.secondname = secondname;
     }
-
 }

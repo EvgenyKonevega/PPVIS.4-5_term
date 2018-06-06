@@ -1,5 +1,6 @@
 package view;
 
+import controller.Controller;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.widgets.*;
@@ -11,7 +12,7 @@ public class ParentDisplay {
 
     public static Display display = new Display();
     public static Shell shell = new Shell(display,SWT.SHELL_TRIM | SWT.CENTER);
-    public static Table table = new Table(shell, SWT.SINGLE | SWT.FULL_SELECTION | SWT.V_SCROLL | SWT.H_SCROLL);
+    public Table table = new Table(shell, SWT.SINGLE | SWT.FULL_SELECTION | SWT.V_SCROLL | SWT.H_SCROLL);
 
     public ParentDisplay(){
         shell.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
@@ -88,11 +89,7 @@ public class ParentDisplay {
         Label hseparatorT = new Label(shell, SWT.HORIZONTAL | SWT.SEPARATOR);
         hseparatorT.setBounds(1,50,1007,3);
 
-        table.setBounds(3,105, 1003, 233);
-        table.setHeaderVisible(true);
-        table.setLinesVisible(true);
         StudentsTable studentsTable = new StudentsTable(shell, table);
-
     }
 
     public void popupMenu(){

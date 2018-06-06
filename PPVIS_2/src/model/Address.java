@@ -1,6 +1,6 @@
 package model;
 
-public class Adress {
+public class Address {
 
     private String country;
     private String state;
@@ -57,4 +57,7 @@ public class Adress {
         this.flatNumber = flatNumber;
     }
 
+    public String getAddress() {
+        return country + ", " + state + ", " + city + ", ул. " + street + ", д. " + houseNumber + ", кв. " + flatNumber;
+    }
 }

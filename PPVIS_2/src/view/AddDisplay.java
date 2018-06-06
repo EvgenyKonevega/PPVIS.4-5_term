@@ -1,6 +1,7 @@
 package view;
 
-import model.Adress;
+import controller.Controller;
+import model.Address;
 import model.Phone;
 import model.Student;
 
@@ -14,6 +15,7 @@ public class AddDisplay {
 
     private Display display = ParentDisplay.display;
     private Shell shell = new Shell(display);
+    private Controller controller = new Controller();
 
     public AddDisplay() {
 
@@ -92,10 +94,10 @@ public class AddDisplay {
         textState.setFont(new Font(display,"Cambria", 18, SWT.NORMAL));
         textState.setBounds(330,285,170,30);
 
-        Label sity = new Label(groupBIO,SWT.NONE);
-        sity.setText("Город:");
-        sity.setBounds(15,320,300,30);
-        sity.setFont(new Font(display,"Cambria", 18, SWT.NORMAL));
+        Label city = new Label(groupBIO,SWT.NONE);
+        city.setText("Город:");
+        city.setBounds(15,320,300,30);
+        city.setFont(new Font(display,"Cambria", 18, SWT.NORMAL));
 
         Text textCity = new Text(groupBIO, SWT.CENTER);
         textCity.setFont(new Font(display,"Cambria", 18, SWT.NORMAL));
@@ -144,8 +146,8 @@ public class AddDisplay {
                     WAR.setMessage("Остались незаполненные поля!");
                     WAR.open();
                 }
-                else if(textFlatNubmer.getText().matches("\\D") || textHouseNumber.getText().matches("\\D") ||
-                        textPhoneNumber.getText().matches("\\D") || textPhoneNummMob.getText().matches("\\D")){
+                else if(!textFlatNubmer.getText().matches("\\d+") || !textHouseNumber.getText().matches("\\d+") ||
+                        !textPhoneNumber.getText().matches("\\d+") || !textPhoneNummMob.getText().matches("\\d+")){
                     MessageBox warning = new MessageBox(shell);
                     warning.setMessage("Некорректный ввод!");
                     warning.open();
@@ -156,15 +158,20 @@ public class AddDisplay {
                 student.setSurname(textSurname.getText());
                 student.setSecondname(textSecondName.getText());
                 Phone phone = new Phone();
+                student.phone = phone;
                 phone.setPhoneNumber(Integer.parseInt(textPhoneNumber.getText()));
                 phone.setPhoneNumMob(Integer.parseInt(textPhoneNummMob.getText()));
-                Adress adress = new Adress();
-                adress.setCountry(textCountry.getText());
-                adress.setState(textState.getText());
-                adress.setCity(textCity.getText());
-                adress.setStreet(textStreet.getText());
-                adress.setHouseNumber(Integer.parseInt(textHouseNumber.getText()));
-                adress.setFlatNumber(Integer.parseInt(textFlatNubmer.getText()));
+                Address address = new Address();
+                student.address = address;
+                address.setCountry(textCountry.getText());
+                address.setState(textState.getText());
+                address.setCity(textCity.getText());
+                address.setStreet(textStreet.getText());
+                address.setHouseNumber(Integer.parseInt(textHouseNumber.getText()));
+                address.setFlatNumber(Integer.parseInt(textFlatNubmer.getText()));
+
+
+                controller.add(student);
 
                 MessageBox message = new MessageBox(shell);
                 message.setMessage("Запись успешно добавлена");
