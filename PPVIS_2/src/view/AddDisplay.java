@@ -170,7 +170,6 @@ public class AddDisplay {
                 address.setHouseNumber(Integer.parseInt(textHouseNumber.getText()));
                 address.setFlatNumber(Integer.parseInt(textFlatNubmer.getText()));
 
-
                 controller.add(student);
 
                 MessageBox message = new MessageBox(shell);

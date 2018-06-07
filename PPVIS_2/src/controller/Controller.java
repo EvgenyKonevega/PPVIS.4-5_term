@@ -17,16 +17,13 @@ public class Controller {
 
     public void showNotes(Table table, int numOfNontes){
         TableItem tableItem = new TableItem(table, SWT.PUSH);
-        for(int i = 0; i <= numOfNontes; i++){
-        tableItem.setText(0, String.valueOf(i));
+       // for(){
+       // tableItem.setText(0, String.valueOf());
         tableItem.setText(1, student.getSurname()+ " " + student.getName()+ " " + student.getSecondname());
         tableItem.setText(2, student.address.getAddress());
-//        tableItem.setText(3, student.getSurname()+ " " + student.getName()+ " " + student.getSecondname());
-//        tableItem.setText(4, student.getSurname()+ " " + student.getName()+ " " + student.getSecondname());
+        tableItem.setText(3, String.valueOf(student.phone.getPhoneNumMob()));
+        tableItem.setText(4, String.valueOf(student.phone.getPhoneNumber()));
 
-
-
-        }
 
     }
 }

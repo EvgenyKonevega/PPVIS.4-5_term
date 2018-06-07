@@ -6,8 +6,8 @@ public class Student {
     private String name;
     private String secondname;
 
-    public Phone phone;
-    public Address address;
+    public Phone phone = new Phone();
+    public Address address = new Address();
 
     public String getSurname() {
         return surname;
