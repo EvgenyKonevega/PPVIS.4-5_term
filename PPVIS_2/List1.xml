@@ -567,7 +567,7 @@
         <secondname>Николаевна</secondname>
         <phone>
             <mobile_phone_number>80447764892</mobile_phone_number>
-            <phone_number>801645984267</phone_number>
+            <phone_number>80164984267</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
@@ -579,275 +579,275 @@
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
+        <surname>Коневега</surname>
         <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <secondname>Иванович</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80258419332</mobile_phone_number>
+            <phone_number>94233134017</phone_number>
+        </phone>
+        <address>
+            <country>Беларусь</country>
+            <state>Брестская область</state>
+            <city>Брест</city>
+            <street>Машерова</street>
+            <house>6</house>
+            <flat>71</flat>
+        </address>
+    </student>
+    <student>
+        <surname>Коневега</surname>
+        <name>Никита</name>
+        <secondname>Олегович</secondname>
+        <phone>
+            <mobile_phone_number>80295481202</mobile_phone_number>
+            <phone_number>76094284043</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
             <state>Брестская область</state>
             <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
+            <street>Руда</street>
+            <house>17</house>
             <flat>1</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Коневега</surname>
+        <name>Игорь</name>
+        <secondname>Иванович</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80449573447</mobile_phone_number>
+            <phone_number>87409359250</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
             <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
+            <city>Брест</city>
+            <street>Комсомольская</street>
+            <house>106</house>
+            <flat>8</flat>
+        </address>
+    </student>
+    <student>
+        <surname>Коневега</surname>
+        <name>Александр</name>
+        <secondname>Николаевич</secondname>
+        <phone>
+            <mobile_phone_number>80332648753</mobile_phone_number>
+            <phone_number>69373157105</phone_number>
+        </phone>
+        <address>
+            <country>Беларусь</country>
+            <state>Брестская область</state>
+            <city>Квасевичи</city>
+            <street>Московская</street>
+            <house>3</house>
             <flat>1</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Коневега</surname>
+        <name>Николай</name>
+        <secondname>Николаевич</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80253382109</mobile_phone_number>
+            <phone_number>67894560510</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
             <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
+            <city>Квасевичи</city>
+            <street>Новая</street>
+            <house>23</house>
             <flat>1</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Коневега</surname>
+        <name>Светлана</name>
+        <secondname>Николаевна</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80332076230</mobile_phone_number>
+            <phone_number>66828751652</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
             <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
+            <city>Белоозерк</city>
+            <street>Пионерская</street>
+            <house>18</house>
+            <flat>6</flat>
+        </address>
+    </student>
+    <student>
+        <surname>Коневега</surname>
+        <name>Татьяна</name>
+        <secondname>Михайловна</secondname>
+        <phone>
+            <mobile_phone_number>80448551370</mobile_phone_number>
+            <phone_number>64443375246</phone_number>
+        </phone>
+        <address>
+            <country>Беларусь</country>
+            <state>Гродненская область</state>
+            <city>Волька</city>
+            <street>Притыцкого</street>
+            <house>96</house>
             <flat>1</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Коневега</surname>
+        <name>Сергей</name>
+        <secondname>Михайлович</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80256347364</mobile_phone_number>
+            <phone_number>58519349946</phone_number>
+        </phone>
+        <address>
+            <country>Беларусь</country>
+            <state>Гродненская область</state>
+            <city>Лида</city>
+            <street>Васнецова</street>
+            <house>25</house>
+            <flat>48</flat>
+        </address>
+    </student>
+    <student>
+        <surname>Коневега</surname>
+        <name>Анна</name>
+        <secondname>Игоревна</secondname>
+        <phone>
+            <mobile_phone_number>80295292467</mobile_phone_number>
+            <phone_number>80164599085</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
             <state>Брестская область</state>
             <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
+            <street>70 лет Октября</street>
+            <house>11/2</house>
+            <flat>10</flat>
+        </address>
+    </student>
+    <student>
+        <surname>Коневега</surname>
+        <name>Юлия</name>
+        <secondname>Олеговна</secondname>
+        <phone>
+            <mobile_phone_number>80339072007</mobile_phone_number>
+            <phone_number>52890453438</phone_number>
+        </phone>
+        <address>
+            <country>Беларусь</country>
+            <state>Брестская область</state>
+            <city>Ивацевичи</city>
+            <street>Руда</street>
+            <house>18</house>
             <flat>1</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Коневега</surname>
+        <name>Егор</name>
+        <secondname>Олегович</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80447753239</mobile_phone_number>
+            <phone_number>43972192104</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
             <state>Брестская область</state>
             <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
+            <street>Руда</street>
+            <house>18</house>
             <flat>1</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Конколович</surname>
+        <name>Владислав</name>
+        <secondname>Вадимович</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80338467720</mobile_phone_number>
+            <phone_number>43615826849</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
+            <state>Минская область</state>
+            <city>Столбцы</city>
+            <street>Калиновского</street>
+            <house>95</house>
+            <flat>7</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Баглай</surname>
+        <name>Мария</name>
+        <secondname>Сергеевна</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80293039425</mobile_phone_number>
+            <phone_number>29196209133</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
+            <state>Витебская область</state>
+            <city>Орша</city>
+            <street>Освобожденная</street>
+            <house>32</house>
+            <flat>19</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Ярышкина</surname>
+        <name>Анна</name>
+        <secondname>Семеновна</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80447206661</mobile_phone_number>
+            <phone_number>94233148017</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
+            <state>Минская область</state>
+            <city>Минск</city>
+            <street>Гука</street>
+            <house>85</house>
+            <flat>40</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Желковская</surname>
+        <name>Данута</name>
+        <secondname>Александровна</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80292026848</mobile_phone_number>
+            <phone_number>84017118027</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
+            <state>Минская область</state>
+            <city>Минск</city>
+            <street>Дзержинского</street>
+            <house>90</house>
+            <flat>3</flat>
         </address>
     </student>
     <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
+        <surname>Гацукович</surname>
+        <name>Мария</name>
+        <secondname>Валерьевна</secondname>
         <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
+            <mobile_phone_number>80331068548</mobile_phone_number>
+            <phone_number>79947536149</phone_number>
         </phone>
         <address>
             <country>Беларусь</country>
             <state>Брестская область</state>
             <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
-        </address>
-    </student>
-    <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
-        <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
-        </phone>
-        <address>
-            <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
-        </address>
-    </student>
-    <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
-        <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
-        </phone>
-        <address>
-            <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
-        </address>
-    </student>
-    <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
-        <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
-        </phone>
-        <address>
-            <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
-        </address>
-    </student>
-    <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
-        <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
-        </phone>
-        <address>
-            <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
-        </address>
-    </student>
-    <student>
-        <surname>Бернухов</surname>
-        <name>Артем</name>
-        <secondname>Степанович</secondname>
-        <phone>
-            <mobile_phone_number>80336128323</mobile_phone_number>
-            <phone_number>80164596415</phone_number>
-        </phone>
-        <address>
-            <country>Беларусь</country>
-            <state>Брестская область</state>
-            <city>Ивацевичи</city>
-            <street>Ленина</street>
-            <house>46</house>
-            <flat>1</flat>
+            <street>Волька</street>
+            <house>61</house>
+            <flat>12</flat>
         </address>
     </student>
 </studentslist>

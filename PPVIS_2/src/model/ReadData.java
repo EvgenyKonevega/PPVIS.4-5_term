@@ -32,7 +32,6 @@ public class ReadData extends DefaultHandler{
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         currentElement = qName;
-        System.out.println(qName);
         switch (currentElement){
             case STUDENTLIST_TAG: {
                 students = new ArrayList<>();
@@ -88,7 +87,6 @@ public class ReadData extends DefaultHandler{
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException, NumberFormatException{
         String text = new String(ch, start, length);
-        System.out.println(text);
         if(text.contains("<") || currentElement == null){
             return;
         }

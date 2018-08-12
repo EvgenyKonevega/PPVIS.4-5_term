@@ -62,7 +62,7 @@ public class Controller {
     public ArrayList<Student> searchSecond(Student s){
         ArrayList<Student> students = new ArrayList<>();
         for (Student student : studentsInfo.getStudents()) {
-            if (student.address.getAddress().equals(s.address.getAddress()) && student.getSurname().equals(s.getSurname())){
+            if (student.address.getAddress().equals(s.address.getAddress()) && student.phone.getPhoneNumMob().equals(s.phone.getPhoneNumMob())){
                 students.add(student);
             }
         }
