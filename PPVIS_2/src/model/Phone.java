@@ -2,22 +2,22 @@ package model;
 
 public class Phone {
 
-    private int phoneNumMob;
-    private int phoneNumber;
+    private String phoneNumMob;
+    private String phoneNumber;
 
-    public int getPhoneNumMob() {
+    public String getPhoneNumMob() {
         return phoneNumMob;
     }
 
-    public void setPhoneNumMob(int phoneNumMob) {
+    public void setPhoneNumMob(String  phoneNumMob) {
         this.phoneNumMob = phoneNumMob;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

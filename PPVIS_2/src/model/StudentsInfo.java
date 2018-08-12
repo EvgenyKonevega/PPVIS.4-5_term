@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class StudentsInfo {
     private ArrayList<Student> students = new ArrayList<>();
-    private ArrayList<Phone> phones = new ArrayList<>();
-    private ArrayList<Address> addresses = new ArrayList<>();
 
-//    public void AddPhone(Phone phone){
-//        phones.add(phone);
-//    }
-//    public void AddAddress(Address address){
-//        addresses.add(address);
-//    }
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
 
-    public void AddStudent(Student student){
+    public void addStudent(Student student) {
         students.add(student);
     }
-//    public void addInfo(){
-//    }
+
+    public void addStudents(ArrayList<Student> students){
+        this.students = students;
+    }
 }
+
+
+
 

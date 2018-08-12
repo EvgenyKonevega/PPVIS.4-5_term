@@ -6,8 +6,8 @@ public class Address {
     private String state;
     private String city;
     private String street;
-    private int houseNumber;
-    private int flatNumber;
+    private String houseNumber;
+    private String flatNumber;
 
     public String getCountry() {
         return country;
@@ -41,19 +41,19 @@ public class Address {
         this.street = street;
     }
 
-    public int getHouseNumber() {
+    public String getHouseNumber() {
         return houseNumber;
     }
 
-    public void setHouseNumber(int houseNumber) {
+    public void setHouseNumber(String houseNumber) {
         this.houseNumber = houseNumber;
     }
 
-    public int getFlatNumber() {
+    public String getFlatNumber() {
         return flatNumber;
     }
 
-    public void setFlatNumber(int flatNumber) {
+    public void setFlatNumber(String flatNumber) {
         this.flatNumber = flatNumber;
     }
 

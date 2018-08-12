@@ -7,12 +7,18 @@ import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Table;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import java.io.File;
 
 public class ParentDisplay {
 
     public static Display display = new Display();
     public static Shell shell = new Shell(display,SWT.SHELL_TRIM | SWT.CENTER);
     public Table table = new Table(shell, SWT.SINGLE | SWT.FULL_SELECTION | SWT.V_SCROLL | SWT.H_SCROLL);
+    private Controller controller = new Controller();
 
     public ParentDisplay(){
         shell.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
@@ -44,52 +50,115 @@ public class ParentDisplay {
         popupMenu();
 
         Button buttonOpenFile = new Button(shell, SWT.PUSH);
-        buttonOpenFile.setBounds(5,5,40,40);
+        buttonOpenFile.setBounds(15,15,60,60);
         buttonOpenFile.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
         buttonOpenFile.setImage(new Image(display, "images/openFileIcon.png" ));
+        buttonOpenFile.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                openFile();
+            }
+        });
 
         Button buttonSaveFile = new Button(shell, SWT.PUSH);
-        buttonSaveFile.setBounds(48,5,40,40);
+        buttonSaveFile.setBounds(93,15,60,60);
         buttonSaveFile.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
         buttonSaveFile.setImage(new Image(display, "images/saveFileIcon.png" ));
+        buttonSaveFile.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                saveFile();
+            }
+        });
 
         Button buttonAddNewStudent = new Button(shell, SWT.PUSH);
-        buttonAddNewStudent.setBounds(91,5,40,40);
+        buttonAddNewStudent.setBounds(171,15,60,60);
         buttonAddNewStudent.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
         buttonAddNewStudent.setImage(new Image(display, "images/add.png" ));
         buttonAddNewStudent.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                AddDisplay addDisplay = new AddDisplay();
+                AddDisplay addDisplay = new AddDisplay(controller);
             }
         });
 
         Button buttonDeleteStudent = new Button(shell, SWT.PUSH);
-        buttonDeleteStudent.setBounds(134,5,40,40);
+        buttonDeleteStudent.setBounds(249,15,60,60);
         buttonDeleteStudent.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
         buttonDeleteStudent.setImage(new Image(display, "images/delete.png" ));
         buttonDeleteStudent.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                DeleteDisplay deleteDisplay = new DeleteDisplay();
+                DeleteDisplay deleteDisplay = new DeleteDisplay(controller);
             }
         });
 
         Button buttonSearchStudent = new Button(shell, SWT.PUSH);
-        buttonSearchStudent.setBounds(177,5,40,40);
+        buttonSearchStudent.setBounds(327,15,60,60);
         buttonSearchStudent.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
         buttonSearchStudent.setImage(new Image(display, "images/search.png" ));
         buttonSearchStudent.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                SearchDisplay searchDisplay = new SearchDisplay();
+                SearchDisplay searchDisplay = new SearchDisplay(controller);
             }
         });
 
         Label hseparatorT = new Label(shell, SWT.HORIZONTAL | SWT.SEPARATOR);
-        hseparatorT.setBounds(1,50,1007,3);
+        hseparatorT.setBounds(1,85,1410,3);
 
-        StudentsTable studentsTable = new StudentsTable(shell, table);
+        StudentsTable studentsTable = new StudentsTable();
+        studentsTable.setTable(shell, table, controller);
+    }
+
+    public void openFile(){
+        FileDialog fileDialog = new FileDialog(shell, SWT.SAVE);
+        fileDialog.setText("Open File");
+        fileDialog.setFilterPath("E:\\");
+        String[] fileExtension = {"*.xml"};
+        fileDialog.setFilterExtensions(fileExtension);
+        String file = fileDialog.open();
+        if(file == null){
+            MessageBox warning = new MessageBox(shell);
+            warning.setMessage("Не выбран файл");
+            warning.setText("Ошибка!");
+            warning.open();
+        }
+        else {
+            try {
+                controller.openFile(new File(file));
+            } catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
+            } catch (TransformerException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void saveFile(){
+        FileDialog fileDialog = new FileDialog(shell, SWT.SAVE);
+        fileDialog.setText("Save File");
+        fileDialog.setFilterPath("E:\\");
+        String[] fileExtension = {"*.xml"};
+        String[] fileName = {"Students List"};
+        fileDialog.setFilterNames(fileName);
+        fileDialog.setFilterExtensions(fileExtension);
+        String file = fileDialog.open();
+        if (file == null){
+            MessageBox messageBox = new MessageBox(shell);
+            messageBox.setMessage("Выберите файл");
+            messageBox.setText("Ошибка!");
+            messageBox.open();
+        }
+        else{
+            try {
+                controller.saveFile(new File(file));
+            } catch (TransformerException e1) {
+                e1.printStackTrace();
+            }
+        }
     }
 
     public void popupMenu(){
@@ -113,14 +182,14 @@ public class ParentDisplay {
         openitem.addListener(SWT.Selection, new Listener() {
             @Override
             public void handleEvent(Event event) {
-
+                openFile();
             }
         });
         saveitem.setText("Сохранить");
         saveitem.addListener(SWT.Selection, new Listener() {
             @Override
             public void handleEvent(Event event) {
-
+                saveFile();
             }
         });
         exititem.setText("Выход");
@@ -137,21 +206,22 @@ public class ParentDisplay {
         additem.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                new AddDisplay();
+                new AddDisplay(controller);
+
             }
         });
         finditem.setText("Найти");
         finditem.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                new SearchDisplay();
+                new SearchDisplay(controller);
             }
         });
         removeitem.setText("Удалить");
         removeitem.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                new DeleteDisplay();
+                new DeleteDisplay(controller);
             }
         });
     }

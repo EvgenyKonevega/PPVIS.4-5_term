@@ -1,29 +1,88 @@
 package controller;
 
+import model.InputData;
+import model.ReadData;
 import model.Student;
 import model.StudentsInfo;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableItem;
+
+import org.xml.sax.SAXException;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import javax.xml.transform.TransformerException;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller {
 
-    private StudentsInfo studentsInfo = new StudentsInfo();
-    private Student student = new Student();
+    public StudentsInfo studentsInfo = new StudentsInfo();
+    private ReadData readData = new ReadData();
 
-    public void add(Student student){
-        studentsInfo.AddStudent(student);
+    public void add(Student student) {
+        studentsInfo.addStudent(student);
     }
 
-    public void showNotes(Table table, int numOfNontes){
-        TableItem tableItem = new TableItem(table, SWT.PUSH);
-       // for(){
-       // tableItem.setText(0, String.valueOf());
-        tableItem.setText(1, student.getSurname()+ " " + student.getName()+ " " + student.getSecondname());
-        tableItem.setText(2, student.address.getAddress());
-        tableItem.setText(3, String.valueOf(student.phone.getPhoneNumMob()));
-        tableItem.setText(4, String.valueOf(student.phone.getPhoneNumber()));
+    public void set(ArrayList<Student> students) {
+        studentsInfo.addStudents(students);
+    }
 
+    public void saveFile(File file) throws TransformerException {
+        InputData inputData = new InputData(studentsInfo.getStudents());
+        inputData.setFile(file);
+        try {
+            inputData.write();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void openFile(File file) throws TransformerException, SAXException, ParserConfigurationException {
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(file, readData);
+            set(readData.getStudents());
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Student> searchFirst(Student s) {
+        ArrayList<Student> students = new ArrayList<>();
+        for (Student student : studentsInfo.getStudents()) {
+            if (student.getSurname().equals(s.getSurname()) && student.phone.getPhoneNumMob().equals(s.phone.getPhoneNumMob())) {
+                students.add(student);
+            }
+        }
+        return students;
+    }
+
+    public ArrayList<Student> searchSecond(Student s){
+        ArrayList<Student> students = new ArrayList<>();
+        for (Student student : studentsInfo.getStudents()) {
+            if (student.address.getAddress().equals(s.address.getAddress()) && student.getSurname().equals(s.getSurname())){
+                students.add(student);
+            }
+        }
+        return students;
+    }
+
+    public ArrayList<Student> searchThird(Student s, boolean typeOfPhone){
+        ArrayList<Student> students = new ArrayList<>();
+        for (Student student : studentsInfo.getStudents()) {
+            if (typeOfPhone) {
+                if (student.getSurname().equals(s.getSurname()) && student.phone.getPhoneNumMob().matches("\\d*" + s.phone.getPhoneNumMob() + "\\d*")){
+                    students.add(student);
+                }
+            }
+            else {
+                if (student.getSurname().equals(s.getSurname()) && student.phone.getPhoneNumber().matches("\\d*" + s.phone.getPhoneNumMob() + "\\d*")){
+                    students.add(student);
+                }
+            }
+        }
+        return students;
     }
 }

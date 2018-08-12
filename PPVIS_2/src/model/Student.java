@@ -4,7 +4,7 @@ public class Student {
 
     private String surname;
     private String name;
-    private String secondname;
+    private String secondName;
 
     public Phone phone = new Phone();
     public Address address = new Address();
@@ -25,11 +25,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getSecondname() {
-        return secondname;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setSecondname(String secondname) {
-        this.secondname = secondname;
+    public void setSecondName(String secondname) {
+        this.secondName = secondname;
     }
 }
