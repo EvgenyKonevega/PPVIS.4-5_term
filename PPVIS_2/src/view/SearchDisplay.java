@@ -274,11 +274,18 @@ public class SearchDisplay {
         updateTable.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                if(Integer.parseInt(numCurrNotes.getText()) <= Integer.parseInt(num.getText()) && Integer.parseInt(numCurrNotes.getText()) > 0) {
-                    currentPage.setText("1");
-                    studentsTable.showNotes(table, students, Integer.parseInt(numCurrNotes.getText()) * (Integer.parseInt(currentPage.getText()) - 1), Integer.parseInt(numCurrNotes.getText()) * Integer.parseInt(currentPage.getText()));
-                    int page = (int) Math.ceil(Double.parseDouble(num.getText()) / Double.parseDouble(numCurrNotes.getText()));
-                    pages.setText(String.valueOf(page));
+                if (numCurrNotes.getText().isEmpty()) {
+                    MessageBox message = new MessageBox(shell);
+                    message.setMessage("Введите необходимое число записей на страницу");
+                    message.setText("Ошибка!");
+                    message.open();
+                } else {
+                    if (Integer.parseInt(numCurrNotes.getText()) <= Integer.parseInt(num.getText()) && Integer.parseInt(numCurrNotes.getText()) > 0) {
+                        currentPage.setText("1");
+                        studentsTable.showNotes(table, students, Integer.parseInt(numCurrNotes.getText()) * (Integer.parseInt(currentPage.getText()) - 1), Integer.parseInt(numCurrNotes.getText()) * Integer.parseInt(currentPage.getText()));
+                        int page = (int) Math.ceil(Double.parseDouble(num.getText()) / Double.parseDouble(numCurrNotes.getText()));
+                        pages.setText(String.valueOf(page));
+                    }
                 }
             }
         });
