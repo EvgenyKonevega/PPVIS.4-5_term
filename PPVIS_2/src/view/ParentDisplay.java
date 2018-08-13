@@ -170,7 +170,7 @@ public class ParentDisplay {
                     studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())));
                 }
                 else if(Integer.parseInt(currentPage.getText()) == Integer.parseInt(pages.getText())){
-                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), 50);
+                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(num.getText()));
                     //currentPage.setText(String.valueOf(Integer.parseInt(currentPage.getText()) + 1));
                 }
             }
@@ -191,7 +191,7 @@ public class ParentDisplay {
                     studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())));
                 }
                 else if(Integer.parseInt(currentPage.getText()) == Integer.parseInt(pages.getText())){
-                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), 50);
+                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(num.getText()));
                 }
             }
         });

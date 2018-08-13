@@ -132,15 +132,16 @@ public class AddDisplay {
         Button buttonAdd = new Button(groupBIO, SWT.PUSH);
         buttonAdd.setBounds(410,575,110,45);
         buttonAdd.setText("Добавить");
+
         buttonAdd.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e){
-                if(textName.getText().isEmpty() || textSurname.getText().length()==0 ||
-                        textSecondName.getText().length()==0 || textCountry.getText().length()==0 ||
-                        textCity.getText().length()==0 || textState.getText().length()==0 ||
-                        textStreet.getText().length()==0 || textPhoneNumber.getText().length()==0 ||
-                        textPhoneNummMob.getText().length()==0||textHouseNumber.getText().length()==0 ||
-                        textFlatNubmer.getText().length()==0){
+                if(textName.getText().isEmpty() || textSurname.getText().isEmpty() ||
+                        textSecondName.getText().isEmpty() || textCountry.getText().isEmpty() ||
+                        textCity.getText().isEmpty() || textState.getText().isEmpty() ||
+                        textStreet.getText().isEmpty() || textPhoneNumber.getText().isEmpty() ||
+                        textPhoneNummMob.getText().isEmpty()||textHouseNumber.getText().isEmpty() ||
+                        textFlatNubmer.getText().isEmpty()){
                     MessageBox WAR = new MessageBox(shell);
                     WAR.setMessage("Остались незаполненные поля!");
                     WAR.open();
@@ -163,7 +164,6 @@ public class AddDisplay {
                 address.setHouseNumber(textHouseNumber.getText());
                 address.setFlatNumber(textFlatNubmer.getText());
                 controller.add(student);
-
 
                 MessageBox message = new MessageBox(shell);
                 message.setMessage("Запись успешно добавлена");

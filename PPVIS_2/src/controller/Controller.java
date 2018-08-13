@@ -28,6 +28,25 @@ public class Controller {
         studentsInfo.addStudents(students);
     }
 
+    public int delete(Student stud, int criterion, boolean typeOfPhone){
+        ArrayList<Student> listToDelete = new ArrayList<>();
+        switch (criterion){
+            case 1: {
+                listToDelete = searchFirst(stud);
+            }break;
+            case 2: {
+                listToDelete = searchSecond(stud);
+            }break;
+            case 3: {
+                listToDelete = searchThird(stud, typeOfPhone);
+            }break;
+        }
+        for (Student student : listToDelete){
+            studentsInfo.deleteStudent(student);
+        }
+        return listToDelete.size();
+    }
+
     public void saveFile(File file) throws TransformerException {
         InputData inputData = new InputData(studentsInfo.getStudents());
         inputData.setFile(file);

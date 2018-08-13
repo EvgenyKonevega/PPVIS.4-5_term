@@ -13,9 +13,14 @@ public class StudentsInfo {
         students.add(student);
     }
 
+    public void deleteStudent(Student student){
+        students.remove(student);
+    }
+
     public void addStudents(ArrayList<Student> students){
         this.students = students;
     }
+
 }
 
 
