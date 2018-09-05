@@ -25,7 +25,9 @@ public class Controller {
     }
 
     public void set(ArrayList<Student> students) {
-        studentsInfo.addStudents(students);
+        for (Student student : students){
+            add(student);
+        }
     }
 
     public int delete(Student stud, int criterion, boolean typeOfPhone){

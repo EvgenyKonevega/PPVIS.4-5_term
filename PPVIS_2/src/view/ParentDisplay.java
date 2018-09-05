@@ -1,6 +1,7 @@
 package view;
 
 import controller.Controller;
+import model.Student;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.widgets.*;
@@ -17,7 +18,6 @@ public class ParentDisplay {
 
     public static Display display = new Display();
     public static Shell shell = new Shell(display,SWT.SHELL_TRIM | SWT.CENTER);
-    public Table table = new Table(shell, SWT.SINGLE | SWT.FULL_SELECTION | SWT.V_SCROLL | SWT.H_SCROLL);
     private Controller controller = new Controller();
 
     public ParentDisplay(){
@@ -47,6 +47,7 @@ public class ParentDisplay {
     }
 
     public void parentWindow() {
+
         popupMenu();
 
         Button buttonOpenFile = new Button(shell, SWT.PUSH);
@@ -78,7 +79,7 @@ public class ParentDisplay {
         buttonAddNewStudent.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                AddDisplay addDisplay = new AddDisplay(controller);
+                new AddDisplay(controller);
             }
         });
 
@@ -89,7 +90,7 @@ public class ParentDisplay {
         buttonDeleteStudent.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                DeleteDisplay deleteDisplay = new DeleteDisplay(controller);
+                new DeleteDisplay(controller);
             }
         });
 
@@ -100,25 +101,12 @@ public class ParentDisplay {
         buttonSearchStudent.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                SearchDisplay searchDisplay = new SearchDisplay(controller);
+                new SearchDisplay(controller);
             }
         });
 
         Label hseparatorT = new Label(shell, SWT.HORIZONTAL | SWT.SEPARATOR);
         hseparatorT.setBounds(1,85,1410,3);
-
-        StudentsTable studentsTable = new StudentsTable();
-        studentsTable.setTable(shell, table, controller);
-
-        Label currentPage = new Label(shell, SWT.CENTER);
-        currentPage.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
-        currentPage.setBounds(890, 122, 40, 45);
-        currentPage.setFont(new Font(display, "Cambria", 22, SWT.ITALIC));
-
-        Label pages = new Label(shell, SWT.NONE);
-        pages.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
-        pages.setFont(new Font(display, "Cambria", 22, SWT.ITALIC));
-        pages.setBounds(1000, 122, 45, 45);
 
         Button update = new Button(shell, SWT.PUSH);
         update.setBounds(335,95,100,40);
@@ -129,80 +117,15 @@ public class ParentDisplay {
         num.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
         num.setBounds(275, 95, 40, 40);
 
-        Text numCurrNotes = new Text(shell, SWT.CENTER);
-        numCurrNotes.setFont(new Font(display, "Cambria", 22, SWT.ITALIC));
-        numCurrNotes.setBounds(395, 150, 55, 40);
-
         update.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 num.setText(String.valueOf(controller.studentsInfo.getStudents().size()));
+                StudentsTable studentsTable = new StudentsTable();
+                studentsTable.setTable(shell,  controller.studentsInfo.getStudents());
             }
         });
 
-        Button updateTable = new Button(shell, SWT.PUSH);
-        updateTable.setBounds(460, 150, 150, 40);
-        updateTable.setText("Запись в таблицу");
-        updateTable.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                if(numCurrNotes.getText().isEmpty()){
-                    MessageBox message  = new MessageBox(shell);
-                    message.setMessage("Введите необходимое число записей на страницу");
-                    message.setText("Ошибка!");
-                    message.open();
-                }
-                else {
-                    if (Integer.parseInt(numCurrNotes.getText()) <= Integer.parseInt(num.getText()) && Integer.parseInt(numCurrNotes.getText()) > 0) {
-                        currentPage.setText("1");
-                        studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText()) * (Integer.parseInt(currentPage.getText()) - 1), Integer.parseInt(numCurrNotes.getText()) * Integer.parseInt(currentPage.getText()));
-                        int page = (int) Math.ceil(Double.parseDouble(num.getText()) / Double.parseDouble(numCurrNotes.getText()));
-                        pages.setText(String.valueOf(page));
-                    }
-                }
-            }
-        });
-
-        Button prevPage = new Button(shell, SWT.PUSH);
-        prevPage.setBounds(640, 128, 46, 33);
-        prevPage.setImage(new Image(display, "images/backIcon.gif"));
-        prevPage.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
-
-        prevPage.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent selectionEvent) {
-                if(Integer.parseInt(currentPage.getText()) >= 2) {
-                    currentPage.setText(String.valueOf(Integer.parseInt(currentPage.getText()) - 1));
-                }
-                if(Integer.parseInt(currentPage.getText()) < Integer.parseInt(pages.getText())) {
-                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())));
-                }
-                else if(Integer.parseInt(currentPage.getText()) == Integer.parseInt(pages.getText())){
-                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(num.getText()));
-                    //currentPage.setText(String.valueOf(Integer.parseInt(currentPage.getText()) + 1));
-                }
-            }
-        });
-
-        Button nextPage = new Button(shell, SWT.PUSH);
-        nextPage.setBounds(1055, 128, 46, 33);
-        nextPage.setImage(new Image(display, "images/nextIcon.gif"));
-        nextPage.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
-
-        nextPage.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent selectionEvent) {
-                if(Integer.parseInt(currentPage.getText()) < Integer.parseInt(pages.getText())) {
-                    currentPage.setText(String.valueOf(Integer.parseInt(currentPage.getText()) + 1));
-                }
-                if(Integer.parseInt(currentPage.getText()) < Integer.parseInt(pages.getText())) {
-                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())));
-                }
-                else if(Integer.parseInt(currentPage.getText()) == Integer.parseInt(pages.getText())){
-                    studentsTable.showNotes(table, controller.studentsInfo.getStudents(), Integer.parseInt(numCurrNotes.getText())*(Integer.parseInt(currentPage.getText())-1), Integer.parseInt(num.getText()));
-                }
-            }
-        });
     }
 
     public void openFile(){

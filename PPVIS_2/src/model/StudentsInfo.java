@@ -17,10 +17,6 @@ public class StudentsInfo {
         students.remove(student);
     }
 
-    public void addStudents(ArrayList<Student> students){
-        this.students = students;
-    }
-
 }
 
 
