@@ -123,8 +123,8 @@ public class SearchDisplay {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 num.setText(String.valueOf(students.size()));
-                StudentsTable studentsTable = new StudentsTable();
-                studentsTable.setTable(shell, students);
+                StudentsTable studentsTable = new StudentsTable(students);
+                studentsTable.setTable(shell);
 
             }
         });

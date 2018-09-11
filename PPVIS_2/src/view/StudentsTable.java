@@ -14,10 +14,14 @@ public class StudentsTable {
     private Display display = ParentDisplay.display;
     private ArrayList<Student> students;
 
-    public void setTable(Shell shell,  ArrayList<Student> students) {
+    public StudentsTable(ArrayList<Student> studs) {
+        students = new ArrayList<>();
+        students = studs;
+    }
+
+    public void setTable(Shell shell) {
 
         Table table = new Table(shell, SWT.SINGLE | SWT.FULL_SELECTION | SWT.V_SCROLL | SWT.H_SCROLL);
-        this.students = students;
 
         Button nextPage = new Button(shell, SWT.PUSH);
         nextPage.setBounds(1055, 128, 46, 33);
@@ -151,6 +155,7 @@ public class StudentsTable {
 
      public void showNotes(Table table, ArrayList<Student> students, int startElement, int endElement) {
             table.removeAll();
+            table.clearAll();
          int counter = startElement+1;
          for (Student student : students.subList(startElement, endElement)){
             TableItem tableItem = new TableItem(table, SWT.PUSH);

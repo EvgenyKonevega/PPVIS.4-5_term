@@ -1,13 +1,14 @@
 package view;
 
 import controller.Controller;
-import model.Student;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.*;
-import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.widgets.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -120,9 +121,10 @@ public class ParentDisplay {
         update.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
+                //Composite
                 num.setText(String.valueOf(controller.studentsInfo.getStudents().size()));
-                StudentsTable studentsTable = new StudentsTable();
-                studentsTable.setTable(shell,  controller.studentsInfo.getStudents());
+                StudentsTable studentsTable = new StudentsTable(controller.studentsInfo.getStudents());
+                studentsTable.setTable(shell);
             }
         });
 
