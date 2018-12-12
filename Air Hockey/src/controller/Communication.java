@@ -8,29 +8,24 @@ import java.io.*;
 
 public class Communication {
 
-    private final String action = "action";
-    private final String connect = "connect";
-    private final String update = "update";
-    private final String draw = "draw";
-    private final String startGame = "start game";
+    private final String object = "object";
+    private final String puck = "puck";
+    private final String paddle = "paddle";
+    private double x;
+    private double y;
     private final BufferedReader inputStream;
     private final BufferedWriter outputStream;
+    private GameWindowController windowController;
 
-    public Communication(BufferedReader inputStream, BufferedWriter outputStream) {
-
+    public Communication(GameWindowController windowController, BufferedReader inputStream, BufferedWriter outputStream) {
+        this.windowController = windowController;
         this.inputStream = inputStream;
         this.outputStream = outputStream;
     }
 
-    public void formingMessage(String message){
-        JSONObject jmessage = new JSONObject();
-        jmessage.put("action", message);
-        sendMessage(jmessage.toString());
-    }
-
     public void formingMessage(String message, double x, double y){
         JSONObject jmessage = new JSONObject();
-        jmessage.put("action", message);
+        jmessage.put(object, message);
         jmessage.put("x", x);
         jmessage.put("y", y);
         sendMessage(jmessage.toString());
@@ -39,44 +34,38 @@ public class Communication {
     public void sendMessage(String message){
         try {
             outputStream.write(message);
+            outputStream.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-//    public void receiveMessage() throws ParseException {
-//
-//        String enemyInfo = inputStream.readLine();
-//        JSONParser parser = new JSONParser();
-//        JSONObject info = (JSONObject) parser.parse(enemyInfo);
-//
-//        if (jsonObject.get(action) == startGame) {
-//
-//        } else if (jsonObject.get(action) == connect) {
-//
-//        } else if (jsonObject.get(action) == update) {
-//
-//        } else if (jsonObject.get(action) == draw) {
-//
-//        }
-//    }
+    public void startThread(){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String message = inputStream.readLine();
+                    JSONParser parser = new JSONParser();
+                    JSONObject info = (JSONObject) parser.parse(message);
+                    actionToMessage(info);
+                } catch (IOException | ParseException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+        thread.start();
+    }
 
     public void actionToMessage(JSONObject jsonObject) {
+        x = (double) jsonObject.get("x");
+        y = (double) jsonObject.get("y");
 
-
-        if (jsonObject.get(action) == startGame) {
-
-        } else if (jsonObject.get(action) == update) {
-
+        if (jsonObject.get(object) == paddle) {
+            windowController.drawPaddleByCoordinates(x, y);
+        } else if (jsonObject.get(object) == puck) {
+            windowController.redrawPuck(x, y);
         }
-
-    }
-
-    public void message(String action, double x, double y) {
-        JSONObject jsonString = new JSONObject();
-        jsonString.put("action", action);
-        jsonString.put("x", x);
-        jsonString.put("y", y);
     }
 }

@@ -1,16 +1,17 @@
 package controller;
 
 import model.Player;
+import view.GameWindow;
 import view.Map;
 
 public class GameWindowController {
-    private Communication communication;
     private final Player p1;
     private final Player p2;
+    private GameWindow gamewindow;
+    private Communication communication;
 
-    public GameWindowController(Communication communication, Player p1, Player p2) {
+    public GameWindowController(Player p1, Player p2) {
 
-        this.communication = communication;
         this.p1 = p1;
         this.p2 = p2;
     }
@@ -23,7 +24,19 @@ public class GameWindowController {
         return p2;
     }
 
-
     public void sendNewСoordinates(double x, double y) {
+        communication.formingMessage("paddle", x, y);
+    }
+
+    public void drawPaddleByCoordinates(double x, double y){
+        gamewindow.drawEnemyOnMap(x,y);
+    }
+
+    public void setCommunication(Communication communication){
+        this.communication = communication;
+    }
+
+    public void redrawPuck(double x, double y) {
+        gamewindow.redrawPuckOnMap(x,y);
     }
 }

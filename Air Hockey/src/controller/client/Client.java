@@ -69,8 +69,10 @@ public class Client {
 
 
                     Player enemy = new Player(info);
-                    Communication communication = new Communication(reader,writer);
-                    GameWindowController windowController = new GameWindowController(communication, player, enemy);
+                    GameWindowController windowController = new GameWindowController(player, enemy);
+                    Communication communication = new Communication(windowController, reader,writer);
+                    windowController.setCommunication(communication);
+                    communication.startThread();
                     new GameWindow(windowController);
 //                    });
                 });

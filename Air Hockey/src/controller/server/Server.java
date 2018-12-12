@@ -20,7 +20,6 @@ public class Server {
         this.controller = controller;
     }
 
-
     public void start() {
         new Thread(new ConnectionHandler()).start();
     }
@@ -49,6 +48,7 @@ public class Server {
                 player2Writer.flush();
 
                 Receiver receiver = new Receiver(socket, socket1);
+                receiver.startReceiver();
 
             } catch (IOException e) {
                 e.printStackTrace();

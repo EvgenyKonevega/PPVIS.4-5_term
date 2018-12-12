@@ -75,7 +75,6 @@ public class GameWindow {
 
         map = new Map(group, windowController);
         map.drawMap();
-        map.gameProcess();
 
         gridPane = new GridPane();
 
@@ -129,6 +128,10 @@ public class GameWindow {
         primaryStage.show();
     }
 
+    public void drawEnemyOnMap(double x, double y){
+        map.drawEnemy(x,y);
+    }
+
     public void start() {
         ktimer.startTimer(ktimer.getTime());
     }
@@ -149,5 +152,9 @@ public class GameWindow {
         } else if (result.get() == buttonTypeTwo) {
             primaryStage.close();
         }
+    }
+
+    public void redrawPuckOnMap(double x, double y) {
+        map.drawPuck(x,y);
     }
 }
